@@ -19,15 +19,15 @@ Future testing to be completed on,
 
 ## Usage
 
-### Create a virtual machine
-
-### INstall the scripts
+### Install the scripts
 
 Install the scripts on the management machine by entering
 
 ```
-  git clone http://
+  git clone https://github.com/patrickcberry/meteor-deploy
 ```
+
+### Create a virtual machine
 
 #### VMware
 
