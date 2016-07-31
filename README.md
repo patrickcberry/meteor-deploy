@@ -41,4 +41,10 @@ todo
 
 ### Configure Authentication
 
+#### VMWare
+
+#### AWS
+
+No configuration required. Use the ```.pem ``` file used to create the virtual machine.
+
 
