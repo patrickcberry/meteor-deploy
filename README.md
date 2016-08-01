@@ -43,6 +43,6 @@ In the project folder run the following script to generate RSA keys,
 
 Copy the public key to the server,
 
-``` --- to be complemented ```
+``` --- to be completed --- ```
 
 
