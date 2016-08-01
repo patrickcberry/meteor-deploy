@@ -1,6 +1,11 @@
 # meteor-deploy
 Various scripts to assist with configuring Meteor.js servers and deploying applications
 
+## Usage Overview
++ Create a server VM on which the Meteor application will be deployed (VMware of AWS)
++ Clone this repository to a management machine (tested on GitBash, Windows 10)
++ 
+
 ## Environment
 
 These scripts have been developed for the following environment,
