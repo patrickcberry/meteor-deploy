@@ -43,6 +43,13 @@ todo
 
 #### VMWare
 
+Create a directory to store keys, ```mkdir ../keys```.
+
+In the project folder run the following script to generate RSA keys,
+``` sh keygen.sh ../keys/my-key-file-name```
+
+Copy the public key to the server,
+
 #### AWS
 
 No configuration required. Use the ```.pem ``` file used to create the virtual machine.

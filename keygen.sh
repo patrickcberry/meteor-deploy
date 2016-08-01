@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo 'Generate security keys'
-echo '----------------------------------'
+echo '-----------------------------------'
 echo 'usage sh keygen.sh output-file-name'
 
 # Generate the key pair
