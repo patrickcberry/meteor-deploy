@@ -17,11 +17,11 @@ These scripts have been tested in the following environments,
 Future testing to be completed on,
 + Amazon Web Services
 
-## Usage
+## Usage (VMware)
 
 ### Install the scripts
 
-Install the scripts on the management machine by entering
+Install the scripts on the management machine by entering,
 
 ```
   git clone https://github.com/patrickcberry/meteor-deploy
@@ -29,29 +29,20 @@ Install the scripts on the management machine by entering
 
 ### Create a virtual machine
 
-#### VMware
-
 Creating a VMware virtual machine will not be described here in detail. Either,
 + Copy an existing Ubuntu 14.04 LTS template VM, or
 + Create a new Virtual Machine in VMWare Workstation and install the OS from the Ubuntu 14.04 ISO
 
-### AWS
+### Generate SSH keys
 
-todo
-
-### Configure Authentication
-
-#### VMWare
-
-Create a directory to store keys, ```mkdir ../keys```.
+From the ```meteor-deploy``` folder enter the following command to create a directory to store keys, 
+```mkdir ../keys```
 
 In the project folder run the following script to generate RSA keys,
 ``` sh keygen.sh ../keys/my-key-file-name```
 
 Copy the public key to the server,
 
-#### AWS
-
-No configuration required. Use the ```.pem ``` file used to create the virtual machine.
+``` --- to be complemented ```
 
 
