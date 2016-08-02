@@ -6,6 +6,25 @@
 # Meteor deployment script
 
 # ################################################################
+# SHow the status
+# ################################################################
+
+function showStatus(){
+
+	if [ -r ~/.mdpcfg/config ]; then
+		source ~/.mdpcfg/config
+		echo "Status"
+		echo " IP              : " $ip
+		echo " DEFAULT KEY FILE: " $default_key	
+	else
+		echo ""
+		echo "Configuration file dosen't exist. Create the file with the following command,"
+		echo ""
+		echo "    $0 setup-mgmt"
+	fi
+}
+
+# ################################################################
 # Setup the managment machine
 # ################################################################
 
@@ -52,12 +71,8 @@ function mgmtSetup() {
 	fi
 
 	# Display status
-
-	echo "Status"
-	echo " IP              : " $ip
-	echo " DEFAULT KEY FILE: " $default_key
+	showStatus
 }
-
 
 function doHelp() {
 	echo "Help command to be added"	
@@ -73,18 +88,18 @@ function chkConfigExists() {
 }
 
 case "$1" in
-	--help)
+	help)
 		doHelp
 		;;
 	setup-mgmt)
 		mgmtSetup
 		;;
 	status)
-		echo "Status command to be added"
+		showStatus
 		;;
 	*)
 		# No match
-		echo "Usage $0 { --- to be completed --- }"
+		echo "Usage $0 { setup-mgmt | status | help }"
 		exit 1
 esac
 
