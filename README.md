@@ -8,7 +8,7 @@ Various scripts to assist with configuring Meteor.js servers and deploying appli
 - [ ] Test connection to server using the key
 
 ## Usage Overview
-+ Create a server VM on which the Meteor application will be deployed (VMware of AWS)
++ Create a server VM on which the Meteor application will be deployed ([VMware](#create-a-virtual-machine) or AWS)
 + [Clone this repository to a management machine](#install-the-scripts) (tested on GitBash, Windows 10)
 + Configure the application (generate keys, set ip address and username)
 
@@ -30,6 +30,12 @@ Future testing to be completed on,
 
 ## Usage (VMware)
 
+### Create a virtual machine
+
+Creating a VMware virtual machine will not be described here in detail. Either,
++ Copy an existing Ubuntu 14.04 LTS template VM, or
++ Create a new Virtual Machine in VMWare Workstation and install the OS from the Ubuntu 14.04 ISO
+
 ### Install the scripts
 
 Install the scripts on the management machine by entering,
@@ -37,13 +43,6 @@ Install the scripts on the management machine by entering,
 ```
   git clone https://github.com/patrickcberry/meteor-deploy
 ```
-
-### Create a virtual machine
-
-Creating a VMware virtual machine will not be described here in detail. Either,
-+ Copy an existing Ubuntu 14.04 LTS template VM, or
-+ Create a new Virtual Machine in VMWare Workstation and install the OS from the Ubuntu 14.04 ISO
-
 ### Generate SSH keys
 
 From the ```meteor-deploy``` folder enter the following command to create a directory to store keys, 
