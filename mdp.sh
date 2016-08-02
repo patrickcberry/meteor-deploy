@@ -6,10 +6,10 @@
 # Meteor deployment script
 
 # ################################################################
-# SHow the status
+# Show the status
 # ################################################################
 
-function showStatus(){
+function showConfig(){
 
 	if [ -r ~/.mdpcfg/config ]; then
 		source ~/.mdpcfg/config
@@ -64,6 +64,14 @@ function mgmtSetup() {
 	else
 		echo "Key file dosn't exist -> create"
 
+		# Generate the key pair
+		#
+		# -t rsa	RSA key type
+		# -b 4096	Number of bits in the key
+		# -v		Verbose output
+		# -f $1		Key output file
+		# -N ""		Pass-phrase
+
 		ssh-keygen -t rsa -b 4096 -v -f $default_key -N ""
 
 		mv $default_key ~/.mdpcfg/$default_key.pem
@@ -71,7 +79,7 @@ function mgmtSetup() {
 	fi
 
 	# Display status
-	showStatus
+	showConfig
 }
 
 function doHelp() {
@@ -87,19 +95,48 @@ function chkConfigExists() {
 	fi	
 }
 
+function displaySetUsage(){
+	echo ""
+	echo "Set usage:"
+	echo "   $0 set [name] [value]"
+	echo ""
+	echo "   name  = [ ip ]"	
+	echo "   value = the value"
+}
+
+function processSet() {
+	case "$#" in
+		1)
+			displaySetUsage $@
+			;;
+		2)
+			displaySetUsage $@
+			;;
+		3)
+			# process the value
+			echo "need to set $2 = $3"
+			;;
+		*)
+			;;
+	esac
+}
+
 case "$1" in
 	help)
 		doHelp
 		;;
-	setup-mgmt)
+	setup)
 		mgmtSetup
 		;;
-	status)
-		showStatus
+	config)
+		showConfig
+		;;
+	set)
+		processSet $@
 		;;
 	*)
 		# No match
-		echo "Usage $0 { setup-mgmt | status | help }"
+		echo "Usage $0 { setup | config | help | set [name] [value] }"
 		exit 1
 esac
 
