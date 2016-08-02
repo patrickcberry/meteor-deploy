@@ -2,10 +2,10 @@
 Various scripts to assist with configuring Meteor.js servers and deploying applications
 
 ## Next
-[ ] Set and store IP address
-[ ] Set user name
-[ ] Connect to server and copy public key
-[ ] Test connection to server using the key
+- [ ] Set and store IP address
+- [ ] Set user name
+- [ ] Connect to server and copy public key
+- [ ] Test connection to server using the key
 
 ## Usage Overview
 + Create a server VM on which the Meteor application will be deployed (VMware of AWS)
