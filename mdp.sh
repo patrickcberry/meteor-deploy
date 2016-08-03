@@ -11,8 +11,9 @@
 
 function showConfig(){
 
-	if [ -r ~/.mdpcfg/config ]; then
-		source ~/.mdpcfg/config
+	if [ -r ~/.mdpcfg/ip.config ]; then
+		source ~/.mdpcfg/ip.config
+		source ~/.mdpcfg/key.config
 		echo "Status"
 		echo " IP              : " $ip
 		echo " DEFAULT KEY FILE: " $default_key	
@@ -20,7 +21,7 @@ function showConfig(){
 		echo ""
 		echo "Configuration file dosen't exist. Create the file with the following command,"
 		echo ""
-		echo "    $0 setup-mgmt"
+		echo "    $0 setup"
 	fi
 }
 
@@ -42,19 +43,20 @@ function mgmtSetup() {
 
 	# Check if config file exists. Create if required
 
-	if [ -r ~/.mdpcfg/config ]; then
+	if [ -r ~/.mdpcfg/ip.config ]; then
 		# echo "Config file exists"
 		tmp=" " # empty command to keep if happy
 	else
 		echo "Config file dosn't exist -> create"
 
-		echo 'ip="0.0.0.0"' > ~/.mdpcfg/config
-		echo 'default_key="meteor-key"' >> ~/.mdpcfg/config
+		echo 'ip="0.0.0.0"' > ~/.mdpcfg/ip.config
+		echo 'default_key="meteor-key"' > ~/.mdpcfg/key.config
 	fi
 
 	# Read in config parameters
 
-	source ~/.mdpcfg/config
+	source ~/.mdpcfg/ip.config
+	source ~/.mdpcfg/key.config
 
 	# Check if key files exist. Create default if required
 
@@ -115,6 +117,14 @@ function processSet() {
 		3)
 			# process the value
 			echo "need to set $2 = $3"
+			case "$2" in
+				ip)
+					echo 'ip='$3 > ~/.mdpcfg/ip.config
+					;;
+				*)
+					echo "ERROR: $2 is not a valid variable to set"
+					;;
+			esac
 			;;
 		*)
 			;;

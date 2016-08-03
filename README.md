@@ -2,7 +2,8 @@
 Various scripts to assist with configuring Meteor.js servers and deploying applications
 
 ## Next
-- [ ] Set and store IP address
+- [X] Set and store IP address
+- [ ] Function to check all config files exist
 - [ ] Set user name
 - [ ] Connect to server and copy public key
 - [ ] Test connection to server using the key
