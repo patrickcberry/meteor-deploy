@@ -12,6 +12,7 @@ Various scripts to assist with configuring Meteor.js servers and deploying appli
 + Create a server VM on which the Meteor application will be deployed ([VMware](#create-a-virtual-machine) or AWS)
 + [Clone this repository to a management machine](#install-the-scripts) (tested on GitBash, Windows 10)
 + Configure the application (generate keys, set ip address and username)
++ Connect to server and copy key
 
 ## Environment
 
